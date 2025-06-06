@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-wrapper">
+    <div class="btn-back">
+    </div>
+
+    <header class="login-header">
+      <h1>Bem Vindo</h1>
+    </header>
+<br>
+    <div class="logo">
+      <img src="../../assets/images/logo-saude.jpg" alt="Logo Saúde" class="logo-img">
+      <h1>VaxiAgenda</h1>
+    </div>
+
+    <form class="form">
+      <ion-item class="input">
+        <ion-input label="Email" type="email" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-input label="Senha" type="password" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="botao">
+       Entrar
+      </ion-button>
+
+      <div class="link-forgot">
+        <a href="#">Esqueceu a senha? </a>
+      </div>
+    </form>
+
+    <footer class="login-footer">
+      <p>Não tem uma conta? <a [routerLink]="['/signup']">Criar</a></p>
+    </footer>
+  </div>
+</ion-content>

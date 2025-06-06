@@ -1,0 +1,7 @@
+{
+  "name": "Vaxiagenda",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

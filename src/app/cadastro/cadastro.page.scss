@@ -1,0 +1,184 @@
+ion-content {
+  background: transparent;
+  overflow: scroll;
+}
+
+.criarconta {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #2d1b4e, #3a1c54, #4a2160);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+ion-icon {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.header {
+  padding: 32px 20px 0;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+  }
+
+
+.form {
+  padding: 0 20px;
+
+  .input {
+    --background: rgba(0, 0, 0, 0.2);
+    --color: white;
+    --placeholder-color: rgba(255, 255, 255, 0.5);
+    --placeholder-opacity: 1;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    --border-radius: 8px;
+    --highlight-color-focused: #9370DB;
+    --border-width: 0;
+    --padding-start: 16px;
+
+    ion-input {
+      --color: white;
+      --placeholder-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .botao {
+    --background: #9370DB;
+    --background-activated: #8A2BE2;
+    --background-focused: #8A2BE2;
+    --background-hover: #8A2BE2;
+    --color: white;
+    --border-radius: 8px;
+    margin-top: 16px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .linha {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .linha::before,
+  .linha::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  span {
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .social-button {
+    --border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
+
+  ion-icon {
+    font-size: 20px;
+    color: white;
+  }
+
+
+  .facebook {
+    --background: rgba(59, 89, 152, 0.2);
+  }
+
+  .google {
+    --background: rgba(219, 68, 55, 0.2);
+  }
+}
+
+
+.footer {
+  margin-top: auto;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0;
+}
+
+a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.criarconta::before,
+.criarconta::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 60%;
+  height: 30%;
+  background: rgba(147, 112, 219, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.criarconta::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 70%;
+  height: 40%;
+  background: rgba(138, 43, 226, 0.15);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+}
