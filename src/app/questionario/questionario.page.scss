@@ -1,0 +1,87 @@
+ion-title{
+    text-align: center;
+}
+
+form {
+  
+  background: linear-gradient(135deg, #2d1b4e, #3a1c54, #454346);
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+}
+
+
+/* Estilo do título da idade */
+ion-label#titulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Estiliza os rótulos das vacinas */
+ion-item ion-label {
+  color: white;
+  font-size: 16px;
+}
+
+/* Radios */
+ion-radio-group ion-item {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Inputs de data */
+ion-input {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: white;
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+  --highlight-color-focused: #9370DB;
+  --border-radius: 8px;
+  --padding-start: 16px;
+  border-radius: 8px;
+}
+
+/* Botão de envio */
+ion-button[type="submit"] {
+  --background: #9370DB;
+  --background-activated: #8A2BE2;
+  --background-focused: #8A2BE2;
+  --background-hover: #8A2BE2;
+  --color: white;
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito visual de fundo */
+form::before,
+form::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+form::before {
+  top: 10%;
+  left: -10%;
+  width: 60%;
+  height: 30%;
+  background: rgba(147, 112, 219, 0.2);
+}
+
+form::after {
+  bottom: 20%;
+  right: -10%;
+  width: 70%;
+  height: 40%;
+  background: rgba(138, 43, 226, 0.15);
+}

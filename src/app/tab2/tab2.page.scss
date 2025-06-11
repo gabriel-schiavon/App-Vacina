@@ -1,0 +1,75 @@
+ion-title {
+  text-align: center;
+}
+
+h2,p{
+  text-align: center
+}
+
+/* Conteúdo geral da página */
+ion-content {
+  --background: linear-gradient(135deg, #2d1b4e, #3a1c54, #454346);
+  color: white;
+}
+
+/* Lista de vacinas tomadas */
+ion-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+ion-list-header ion-label {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ion-item {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Botão "Agendar nova vacina" */
+ion-button {
+  --background: #9370DB;
+  --background-hover: #8A2BE2;
+  --background-activated: #8A2BE2;
+  --border-radius: 8px;
+  --color: white;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card de dicas */
+ion-card {
+  --background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-title,
+ion-card-content {
+  color: white;
+}
+
+ion-card-content ul {
+  padding-left: 16px;
+}
+
+ion-card-content li {
+  margin-bottom: 8px;
+}
+
+/* Parágrafos de introdução */
+p {
+  color: #e0e0e0;
+  font-size: 15px;
+}

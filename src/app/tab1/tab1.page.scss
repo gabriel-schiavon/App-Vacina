@@ -1,0 +1,61 @@
+ion-title {
+  text-align: center;
+}
+
+/* Fundo geral */
+ion-content {
+  --background: linear-gradient(135deg, #2d1b4e, #3a1c54, #454346);
+  color: white;
+}
+
+/* Estilo do item com o datetime */
+ion-item {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+/* Rótulo do datetime */
+ion-label {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Estilo do datetime */
+ion-datetime {
+  --background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+/* Botão Salvar */
+ion-button {
+  --background: #9370DB;
+  --background-hover: #8A2BE2;
+  --background-activated: #8A2BE2;
+  --border-radius: 8px;
+  --color: white;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de datas marcadas */
+ion-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+ion-list ion-item {
+  --background: rgba(255, 255, 255, 0.1);
+  --color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}

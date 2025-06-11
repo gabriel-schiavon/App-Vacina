@@ -1,0 +1,120 @@
+/* Fundo do conteúdo */
+ion-content {
+  --background: transparent;
+  background: linear-gradient(135deg, #2d1b4e, #3a1c54, #454346);
+}
+
+ion-title{
+  text-align: center;
+}
+
+/* Cabeçalho do perfil */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 16px;
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #9370DB;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Informações do perfil */
+.profile-info h2,
+.profile-info p {
+  margin: 0;
+  color: white;
+}
+
+.profile-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profile-info p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Botão de editar perfil */
+ion-button {
+  --color: white;
+}
+
+/* Cards */
+ion-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+ion-card-title {
+  color: white;
+  font-size: 18px;
+}
+
+/* Ícones dos itens */
+ion-icon {
+  color: #9370DB;
+}
+
+/* Títulos dos itens */
+ion-label h3 {
+  color: #FFFFFF;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+ion-label p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+/* Botões de item */
+ion-item {
+  --background: transparent;
+  color: white;
+}
+
+/* Toggle */
+ion-toggle {
+  --handle-background: #9370DB;
+  --handle-background-checked: #8A2BE2;
+  --track-background: rgba(255, 255, 255, 0.3);
+  --track-background-checked: rgba(147, 112, 219, 0.6);
+}
+
+/* Select */
+ion-select {
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+  --color: white;
+  --background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+/* Ícones laterais nos items */
+ion-item ion-icon[slot="end"] {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Ajuste para botão de sair */
+ion-item[color="danger"] ion-label,
+ion-item[color="danger"] ion-icon {
+  color: #ff4d4d !important;
+}
+
+/* Compartilhar */
+ion-item[color="primary"] ion-icon,
+ion-item[color="primary"] ion-label {
+  color: #9370DB !important;
+}

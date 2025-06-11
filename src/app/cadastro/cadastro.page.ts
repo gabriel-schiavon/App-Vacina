@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -6,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro.page.scss'],
   standalone:false,
 })
-export class CadastroPage implements OnInit {
+export class CadastroPage{
 
-  constructor() { }
+  constructor(private router:Router) { }
 
-  ngOnInit() {
+  enviar() {
+    this.router.navigate(['/questionario']);
+
   }
 
 }

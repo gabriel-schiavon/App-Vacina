@@ -1,23 +1,24 @@
 ion-content {
-  background: transparent;
-  overflow: scroll;
+  --background: transparent;
+  overflow-y: auto !important;
+  display: block;
 }
 
 .criarconta {
-  height: 100%;
+  min-height: 100vh; /* Permite que o conteúdo cresça além da altura da tela */
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, #2d1b4e, #3a1c54, #4a2160);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  padding-bottom: 20px; /* Evita que o botão fique colado no final */
 }
 
 ion-icon {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.8);
 }
-
 
 .header {
   padding: 32px 20px 0;
@@ -32,77 +33,78 @@ h1 {
   margin: 0;
 }
 
-
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 20px 0;
 }
-  .logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: contain;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-  }
 
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  background-image: url(../../assets/img/logo.PNG);
+  padding: 10px;
+}
 
 .form {
   padding: 0 20px;
+}
 
-  .input {
-    --background: rgba(0, 0, 0, 0.2);
-    --color: white;
-    --placeholder-color: rgba(255, 255, 255, 0.5);
-    --placeholder-opacity: 1;
-    margin-bottom: 16px;
-    border-radius: 8px;
-    --border-radius: 8px;
-    --highlight-color-focused: #9370DB;
-    --border-width: 0;
-    --padding-start: 16px;
+.input {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: white;
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+  --placeholder-opacity: 1;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  --border-radius: 8px;
+  --highlight-color-focused: #9370DB;
+  --border-width: 0;
+  --padding-start: 16px;
+}
 
-    ion-input {
-      --color: white;
-      --placeholder-color: rgba(255, 255, 255, 0.5);
-    }
-  }
+.input ion-input {
+  --color: white;
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+}
 
-  .botao {
-    --background: #9370DB;
-    --background-activated: #8A2BE2;
-    --background-focused: #8A2BE2;
-    --background-hover: #8A2BE2;
-    --color: white;
-    --border-radius: 8px;
-    margin-top: 16px;
-    height: 48px;
-    font-weight: 500;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.botao {
+  --background: #9370DB;
+  --background-activated: #8A2BE2;
+  --background-focused: #8A2BE2;
+  --background-hover: #8A2BE2;
+  --color: white;
+  --border-radius: 8px;
+  margin-top: 16px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .linha {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 24px 0;
-  }
+.linha {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+}
 
-  .linha::before,
-  .linha::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
+.linha::before,
+.linha::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-  span {
-    padding: 0 10px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
-  }
+span {
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
 }
 
 .social {
@@ -110,28 +112,26 @@ h1 {
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
-
-  .social-button {
-    --border-radius: 50%;
-    width: 48px;
-    height: 48px;
-  }
-
-  ion-icon {
-    font-size: 20px;
-    color: white;
-  }
-
-
-  .facebook {
-    --background: rgba(59, 89, 152, 0.2);
-  }
-
-  .google {
-    --background: rgba(219, 68, 55, 0.2);
-  }
 }
 
+.social-button {
+  --border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.social ion-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.facebook {
+  --background: rgba(59, 89, 152, 0.2);
+}
+
+.google {
+  --background: rgba(219, 68, 55, 0.2);
+}
 
 .footer {
   margin-top: auto;
@@ -155,7 +155,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
 .criarconta::before,
 .criarconta::after {
   content: "";
@@ -171,14 +170,10 @@ a:hover {
 }
 
 .criarconta::after {
-  content: "";
-  position: absolute;
   bottom: 20%;
   right: -10%;
   width: 70%;
   height: 40%;
   background: rgba(138, 43, 226, 0.15);
-  border-radius: 50%;
-  filter: blur(40px);
   z-index: 0;
 }

@@ -1,17 +1,153 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  
+  <!-- Header do Perfil -->
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <ion-img [src]="perfilUsuario.foto || 'assets/avatar-default.png'"></ion-img>
+    </ion-avatar>
+    
+    <div class="profile-info">
+      <h2>{{ perfilUsuario.nome || 'Usuário' }}</h2>
+      <p>{{ perfilUsuario.email || 'email@exemplo.com' }}</p>
+    </div>
+    
+    <ion-button fill="clear" (click)="editarPerfil()">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Informações Pessoais -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informações Pessoais</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h3>Nome Completo</h3>
+          <p>{{ perfilUsuario.nomeCompleto || 'Não informado' }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h3>Data de Nascimento</h3>
+          <p>{{ perfilUsuario.dataNascimento || 'Não informado' }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h3>Telefone</h3>
+          <p>{{ perfilUsuario.telefone || 'Não informado' }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="location-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h3>Cidade</h3>
+          <p>{{ perfilUsuario.cidade || 'Não informado' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Configurações da Conta -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Configurações da Conta</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-item button (click)="alterarSenha()">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label>Alterar Senha</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="notifications-outline" slot="start"></ion-icon>
+        <ion-label>Notificações</ion-label>
+        <ion-toggle [(ngModel)]="configuracoes.notificacoes" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="moon-outline" slot="start"></ion-icon>
+        <ion-label>Modo Escuro</ion-label>
+        <ion-toggle [(ngModel)]="configuracoes.modoEscuro" (ionChange)="alterarTema()" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item button (click)="sincronizarDados()">
+        <ion-icon name="sync-outline" slot="start"></ion-icon>
+        <ion-label>Sincronizar Dados</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Configurações do App -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Configurações do App</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="language-outline" slot="start"></ion-icon>
+        <ion-label>Idioma</ion-label>
+        <ion-select [(ngModel)]="configuracoes.idioma" placeholder="Português">
+          <ion-select-option value="pt">Português</ion-select-option>
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="es">Español</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item button (click)="limparCache()">
+        <ion-icon name="trash-outline" slot="start"></ion-icon>
+        <ion-label>Limpar Cache</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-item button (click)="sobre()">
+        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        <ion-label>Sobre o App</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Ações -->
+  <ion-card>
+    <ion-card-content>
+      <ion-item button (click)="compartilharApp()">
+        <ion-icon name="share-outline" slot="start" color="primary"></ion-icon>
+        <ion-label color="primary">Compartilhar App</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-item button (click)="suporte()">
+        <ion-icon name="help-circle-outline" slot="start" color="medium"></ion-icon>
+        <ion-label>Suporte</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-item button (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start" color="danger"></ion-icon>
+        <ion-label color="danger">Sair da Conta</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

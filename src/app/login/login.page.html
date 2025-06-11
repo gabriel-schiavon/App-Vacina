@@ -6,9 +6,11 @@
     <header class="login-header">
       <h1>Bem Vindo</h1>
     </header>
-<br>
-    <div class="logo">
-      <img src="../../assets/images/logo-saude.jpg" alt="Logo Saúde" class="logo-img">
+
+    <br>
+
+    <div class="logo-container">
+      <img src="../../assets/img/logo.PNG" alt="Logo Saúde" class="logo">
       <h1>VaxiAgenda</h1>
     </div>
 
@@ -22,16 +24,16 @@
       </ion-item>
 
       <ion-button expand="block" class="botao">
-       Entrar
+        Entrar
       </ion-button>
 
       <div class="link-forgot">
-        <a href="#">Esqueceu a senha? </a>
+        <a>Esqueceu a senha? </a>
       </div>
     </form>
 
     <footer class="login-footer">
-      <p>Não tem uma conta? <a [routerLink]="['/signup']">Criar</a></p>
+      <p>Não tem uma conta? <a [routerLink]="['/cadastro']">Criar</a></p>
     </footer>
   </div>
 </ion-content>
