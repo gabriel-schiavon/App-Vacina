@@ -14,7 +14,7 @@ export class QuestionarioPage implements OnInit {
   constructor(private router: Router) { }
 
 
-  idadeTeste = 90;
+  idadeTeste = 10;
   vacinasParaMostrar: string[] = [];
   respostasVacinas: any = {};
   datasVacinas: any = {};
