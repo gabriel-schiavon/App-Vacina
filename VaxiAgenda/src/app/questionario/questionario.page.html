@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Questionário Vacina</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="onSubmit()" #vacinaForm="ngForm">
+
+    <!-- Info da idade -->
+    <p style="color: white; padding: 8px;">
+  Sua idade é {{ idade }} anos
+</p>
+
+    <!-- Perguntas dinâmicas das vacinas -->
+  <div *ngFor="let vacina of vacinasParaMostrar; let i =  index">
+
+      <ion-label>
+        <span>Você já tomou a vacina: </span><strong>{{ vacina }}</strong>
+      </ion-label>
+
+
+      <ion-radio-group [(ngModel)]="respostasVacinas[vacina]" [name]="'vacina_' + i" required (ionChange)="onVacinaChange(vacina, $event.detail.value)">
+        <ion-item>
+          <ion-radio slot="start" value="sim"></ion-radio>
+          <ion-label>Sim</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio slot="start" value="nao"></ion-radio>
+          <ion-label>Não</ion-label>
+        </ion-item>
+      </ion-radio-group>
+      
+      <!-- Campo data aparece só se a resposta for "Sim" -->
+      <ion-item *ngIf="respostasVacinas[vacina] === 'sim'">
+        <ion-label position="stacked">Informe a data em que tomou a vacina</ion-label>
+        <ion-input type="date" [(ngModel)]="datasVacinas[vacina]" [name]="'data_' + i" required></ion-input>
+      </ion-item>
+
+      <br>
+    </div>
+
+    <!-- Botão de enviar -->
+    <ion-button expand="block" type="submit" color="primary">
+      Enviar Respostas
+    </ion-button>
+
+  </form>
+
+</ion-content>

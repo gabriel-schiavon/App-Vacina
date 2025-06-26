@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vincular Vacinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let vacina of vacinas">
+      <ion-label>{{ vacina.nomeVacina }}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="vacina.selecionada"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+<ion-button
+  expand="block"
+  *ngIf="vacinas"
+  (click)="salvar()">
+  Salvar Seleção
+</ion-button>
+
+
+</ion-content>

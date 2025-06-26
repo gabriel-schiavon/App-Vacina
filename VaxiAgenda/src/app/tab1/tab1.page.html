@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calendário de Vacinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Escolha a data da vacina</ion-label>
+    <br>
+    <br>
+    <ion-datetime
+      presentation="date"
+      [(ngModel)]="dataSelecionada">
+    </ion-datetime>
+    <ion-item>
+      <ion-label position="floating">Vacina</ion-label>
+      <ion-select [(ngModel)]="idVacinaSelecionada" (ionChange)="selecionarVacina($event.detail.value)">
+        <ion-select-option *ngFor="let v of vacinasDisponiveis" [value]="v.id">
+          {{ v.nomeVacina }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="locaisDisponiveis.length > 0">
+      <ion-label position="floating">Local</ion-label>
+      <ion-select [(ngModel)]="idLocalSelecionado">
+        <ion-select-option *ngFor="let l of locaisDisponiveis" [value]="l.id">
+          {{ l.nome }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+  </ion-item>
+
+  <ion-button expand="block" (click)="salvarData()">Salvar</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let data of datasMarcadas">
+      <ion-label>Vacina agendada para: {{ data | date:'dd/MM/yyyy' }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

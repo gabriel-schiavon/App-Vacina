@@ -1,0 +1,38 @@
+ion-title {
+    text-align: center;
+}
+/* Conteúdo geral da página */
+ion-content {
+    --background: linear-gradient(135deg, #2d1b4e, #3a1c54, #454346);
+    color: white;
+}
+
+ion-icon{
+    color: #fff;
+    font-size: 30px;
+}
+
+/* Lista de vacinas tomadas */
+ion-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+ion-list-header ion-label {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ion-item {
+  --background: rgba(0, 0, 0, 0.2);
+  --color: black;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+p {
+  color: #4c4c4c;
+  font-size: 15px;
+}

@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="criarconta">
+
+    <div class="header">
+      <h1>Criar Conta</h1>
+    </div>
+
+    <div class="logo-container">
+      <img src="../../assets/img/logo.PNG" alt="Logo Saúde" class="logo">
+      <h1>VaxiAgenda</h1>
+    </div>
+
+    <div class="form">
+      <ion-item class="input">
+        <ion-input [(ngModel)]="usuario.nome" name="nome" label="Nome" type="text" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-label position="floating">CPF</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.cpf" (ionInput)="formatarCPF($event, 'usuario')" inputmode="numeric" maxlength="14"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-input [(ngModel)]="usuario.dataNasc" (ionChange)="verificarIdade()" name="dataNasc" label="Data de Nascimento" type="date" labelPlacement="floating"></ion-input>
+      </ion-item>
+          
+    <ion-item class="input" *ngIf="mostrarCampoResponsavel">
+      <ion-label position="floating">CPF do Responsável</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.responsavelCpf" (ionInput)="formatarCPF($event, 'responsavel')" inputmode="numeric" maxlength="14"></ion-input>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.telefone" (ionInput)="formatarTelefone($event)" inputmode="numeric" maxlength="15"></ion-input>
+    </ion-item>
+
+      <ion-item class="input">
+        <ion-input [(ngModel)]="usuario.endereco" name="endereco" label="Endereço" type="text" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-input [(ngModel)]="usuario.email" name="email" label="Email" type="email" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-input [(ngModel)]="usuario.senha" name="senha" label="Senha" type="password" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="botao" (click)="cadastrar()">
+        inscreva-se
+      </ion-button>
+      <!-- 
+        <div class="linha">
+          <span>ou</span>
+        </div>
+
+        <div class="social">
+          <ion-button fill="clear" class="social-button facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" class="social-button google">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+        </div>
+      -->
+    </div> 
+
+    <div class="footer">
+      <p>Já tem uma conta?<a [routerLink]="['/login']">Entrar</a></p>
+    </div>
+  </div>
+</ion-content>
