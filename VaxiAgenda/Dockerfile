@@ -1,4 +1,5 @@
-FROM node:18
+# Etapa de build
+FROM node:18 AS build
 
 WORKDIR /app
 
@@ -6,9 +7,13 @@ COPY . .
 
 RUN npm install -g @angular/cli @ionic/cli
 RUN npm install
+RUN npm run build --prod
 
-RUN npm run build
+# Etapa de deploy
+FROM nginx:alpine
 
-EXPOSE 8100
+COPY --from=build /app/www /usr/share/nginx/html
 
-CMD ["ionic", "serve", "--host", "0.0.0.0", "--port", "8100", "--disable-host-check"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

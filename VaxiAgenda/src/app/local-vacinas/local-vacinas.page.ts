@@ -22,7 +22,15 @@ export class LocalVacinasPage implements OnInit {
   ) {}
 
   ngOnInit() {
-  this.localLogado = JSON.parse(localStorage.getItem('localLogado') || '{}');
+  const local = JSON.parse(localStorage.getItem('localLogado') || 'null');
+
+  if (!local || !local.id) {
+    alert('Erro: local não identificado. Faça login novamente.');
+    this.router.navigate(['/login-local']);
+    return;
+  }
+
+  this.localLogado = local;
 
   // 1. Busca vacinas já vinculadas
   this.vacinaLocalService.buscarPorLocal(this.localLogado.id).subscribe(vinculadas => {
@@ -37,6 +45,7 @@ export class LocalVacinasPage implements OnInit {
     });
   });
 }
+
 
 
   salvar() {

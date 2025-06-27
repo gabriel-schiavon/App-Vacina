@@ -30,7 +30,8 @@ export class CadastroLocalPage {
   ) {}
 
   salvar() {
-    this.localService.cadastrar(this.local).subscribe(() => {
+    this.localService.cadastrar(this.local).subscribe((localCadastrado) => {
+        localStorage.setItem('localLogado', JSON.stringify(localCadastrado));
       this.toast.create({ message: 'Local salvo com sucesso!', duration: 2000 }).then(t => t.present());
       this.local = { cnpj: '', nome: '', endereco: '', email: '', senha: '' };
         this.router.navigate(['/home-local']);
